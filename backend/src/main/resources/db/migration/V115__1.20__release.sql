@@ -232,3 +232,25 @@ ALTER TABLE api_scenario DROP COLUMN use_url;
 
 -- 优化删除报告效率
 CREATE INDEX api_definition_exec_result_integrated_report_id_IDX USING BTREE ON api_definition_exec_result (integrated_report_id);
+
+
+-- todo create v1.21
+CREATE TABLE IF NOT EXISTS custom_field_test_case
+(
+    resource_id varchar(50) NOT NULL,
+    field_id varchar(50) NOT NULL,
+    value varchar(500),
+    text_value text,
+    PRIMARY KEY (resource_id, field_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS custom_field_issues
+(
+    resource_id varchar(50) NOT NULL,
+    field_id varchar(50) NOT NULL,
+    value varchar(500),
+    text_value text,
+    PRIMARY KEY (resource_id, field_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_general_ci;
+
+ALTER TABLE custom_field ADD third_part TINYINT(1) DEFAULT 0 NOT NULL;
