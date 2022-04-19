@@ -25,6 +25,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @PropertySource(value = {
         "classpath:/base.properties",
+//        win10环境配置
+//        "classpath:/metersphere.properties",
         "file:/opt/metersphere/conf/metersphere.properties",
 }, encoding = "UTF-8", ignoreResourceNotFound = true)
 public class Application {
